@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISA Risk</title>
+  <meta name="description" content="ISA Risk: riesgo predictivo y recomendación de crédito para clientes empresariales. Datos ficticios.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B1F24'/%3E%3Cpath d='M5 25 L16 6 L27 25 Z' fill='%23F5B700'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="marca">
+        <div class="marca-fila">
+          <svg class="marca-logo" viewBox="0 0 44 44" aria-hidden="true">
+            <path d="M4 38 L22 6 L40 38 Z" fill="#F5B700"/>
+            <path d="M13 38 L22 22 L31 38 Z" fill="#1B1F24"/>
+            <rect x="20.2" y="27" width="3.6" height="6" rx="1" fill="#F5B700"/>
+          </svg>
+          <div class="marca-nombre">ISA<br><span>RISK</span></div>
+        </div>
+        <div class="marca-sub">Créditos y cobranzas</div>
+      </div>
+      <div class="rol"><span id="rolLateral">JEFATURA</span> <span>«</span></div>
+      <nav class="menu" id="menu" aria-label="Menú principal"></nav>
+      <div class="usuario">
+        <div class="avatar" id="usuarioAvatar">UD</div>
+        <div style="min-width:0;flex:1"><div class="usuario-nombre" id="usuarioNombre">Usuario demo</div><div class="usuario-rol" id="usuarioRol">Jefatura de Créditos</div></div>
+        <button class="salir" id="btnSalir" title="Cambiar de perfil" aria-label="Cambiar de perfil"><svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg></button>
+      </div>
+      <div class="firma">BY: ROSY NAPUCHI</div>
+    </aside>
+
+    <main class="contenido">
+      <header class="topbar">
+        <button class="btn-menu" id="btnMenu" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div>
+          <div class="rol-pagina" id="rolPagina">JEFATURA</div>
+          <h1 id="titulo">Dashboard ejecutivo</h1>
+        </div>
+        <div class="topbar-der">
+          <div class="fecha">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <div><strong>Fecha de análisis:</strong>26 de octubre, 2026</div>
+          </div>
+          <button class="btn" id="btnExportar"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Exportar reporte</button>
+          <button class="icono-btn" id="btnRefrescar" title="Actualizar"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
+          <button class="icono-btn" id="btnAlertas" title="Alertas"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg><span class="burbuja" id="burbuja"></span></button>
+        </div>
+      </header>
+
+      <section class="tarjeta filtros" id="filtros" aria-label="Filtros">
+        <div class="filtro"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h4M7 14h6"/></svg></span><div><label for="fCodigo">Código</label><input id="fCodigo" placeholder="Buscar código"></div></div>
+        <div class="filtro"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 21V5l8-3v19M12 8h8v13M8 9h.01M8 13h.01M8 17h.01M16 12h.01M16 16h.01"/></svg></span><div><label for="fNombre">Razón social</label><input id="fNombre" placeholder="Buscar cliente"></div></div>
+        <div class="filtro"><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></span><div><label for="fSector">Sector</label><select id="fSector"><option value="">Todos</option></select></div></div>
+        <div class="filtro"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><div><label for="fVendedor">Vendedor</label><select id="fVendedor"><option value="">Todos</option></select></div></div>
+        <div class="filtro"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><label for="fPeriodo">Periodo</label><select id="fPeriodo"><option>2026 · Septiembre</option></select></div></div>
+        <button class="limpiar" id="btnLimpiar">↺ Limpiar</button>
+      </section>
+      <div class="aviso-sintetico" id="aviso"><strong>Datos sintéticos de demostración.</strong> Clientes, montos y scores son ficticios; no corresponden a empresas reales.</div>
+
+      <section id="vista" aria-live="polite"></section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="ingreso" id="ingreso" hidden>
+    <div class="ingreso-caja">
+      <div class="ingreso-marca">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M4 38 L22 6 L40 38 Z" fill="#F5B700"/><path d="M13 38 L22 22 L31 38 Z" fill="#1B1F24"/><rect x="20.2" y="27" width="3.6" height="6" rx="1" fill="#F5B700"/></svg>
+        <div><div class="marca-nombre">ISA <span>RISK</span></div><div class="ingreso-sub">Riesgo de crédito para clientes empresariales</div></div>
+      </div>
+      <h2>¿Con qué perfil ingresas?</h2>
+      <p>Demostración con datos ficticios. Cada perfil ve lo que necesita para decidir.</p>
+      <div class="perfiles">
+        <button class="perfil" data-rol="jefatura"><span class="perfil-ico">J</span><strong>Jefatura</strong><span>Ve toda la cartera, prioriza y aprueba según su nivel.</span></button>
+        <button class="perfil" data-rol="analista"><span class="perfil-ico">A</span><strong>Analista</strong><span>Evalúa las solicitudes y prepara la recomendación.</span></button>
+        <button class="perfil" data-rol="comercial"><span class="perfil-ico">C</span><strong>Comercial</strong><span>Consulta si su cliente aprobaría y crea solicitudes.</span></button>
+      </div>
+      <div class="ingreso-pie">BY: ROSY NAPUCHI</div>
+    </div>
+  </div>
+
+  <script src="data/clientes.js"></script>
+  <script src="js/modelo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
